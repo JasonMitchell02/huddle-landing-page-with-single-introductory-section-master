@@ -1,0 +1,201 @@
+/* CSS Reset */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+/* CSS Start */
+
+:root {
+    --colour-main: hsl(257, 40%, 49%);
+    --colour-active: hsl(300, 69%, 71%);
+    --colour-white: #fff;
+
+    --fm-headings: 'Poppins', sans-serif;
+    --fm-main: 'Open Sans', sans-serif;
+
+    --fw-reg: 400;
+    --fw-semibold: 600;
+}
+
+body {
+    height: 100vh;
+    max-width: 1440px;
+    background-color: var(--colour-main);
+    background-image: url(images/bg-desktop.svg);
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: var(--colour-white);
+    margin: 5rem;
+    font-family: var(--fm-main);
+    font-weight: var(--fw-reg);
+}
+
+.container-main {
+    max-width: 1350px;
+    padding: 5rem 0;
+    background-position: top center;
+}
+
+.container-right {
+    padding: 3rem 6rem;
+}
+
+.heading {
+    font-family: var(--fm-headings);
+    font-weight: var(--fw-semibold);
+    line-height: 1.5;
+    padding-bottom: 1rem;
+}
+
+p {
+    line-height: 1.9;
+    letter-spacing: 0.7px;
+}
+
+.brands {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  padding: 8rem 1rem 0 0;
+}
+
+.icons {
+  padding: 0 0.5rem
+}
+
+.icons:hover {
+  color: var(--colour-active);
+  cursor: pointer;
+}
+
+/* Button */
+
+.btn {
+    background-color: var(--colour-white);
+    color: var(--colour-main);
+    padding: 0.9rem 3.5rem;
+    font-family: var(--fm-headings);
+    font-size: 1.1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn:hover {
+  background-color: var(--colour-active);
+  color: var(--colour-white);
+}
+
+/* Media Query */
+
+@media (max-width: 1400px) {
+    .container-right {
+        padding: 3rem 4rem;
+    }
+}
+
+@media (max-width: 1270px) {
+    .container-right {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 990px) {    
+    body {
+      text-align: center;
+      background-image: url(images/bg-mobile.svg);
+      background-size: contain;
+      background-position: top center;
+    }
+  
+    .logo {
+      width: 200px;
+      height: auto;
+    }
+
+    .container-right {
+        padding: 3rem 1rem;
+    }
+
+    .container-main {
+        min-width: 375px; 
+    }
+
+    .heading {
+      padding-bottom: 1.3rem;
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .btn {
+      padding: 0.9rem 5rem;
+      margin-top: 1rem;
+    }
+
+    .brands {
+      justify-content: center;
+    }
+}
+
+/*End Credit */
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
